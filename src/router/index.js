@@ -4,10 +4,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  { path: '/', redirect: '/home' },
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: () => import('../views/index.vue')
+  },
+  {
+    path: "/doc",
+    name: 'doc',
+    component: () => import('../views/doc.vue')
   }
 ]
 

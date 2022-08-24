@@ -13,7 +13,11 @@ const routes = [
   {
     path: "/doc",
     name: 'doc',
-    component: () => import('../views/doc.vue')
+    component: () => import('../views/doc.vue'),
+    children: [
+      { path: "/test", component: () => import('../components/test.vue') },
+      { path: "/Pagination-Select", component: () => import('../components/Pagination-Select.vue') },
+    ]
   }
 ]
 

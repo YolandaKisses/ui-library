@@ -10,9 +10,9 @@ module.exports = {
   // 放置静态文件夹目录
   assetsDir: 'static',
   // 是否开启eslint保存检测
-  lintOnSave: false, 
+  lintOnSave: false,
   // 是否在构建生产包时生成sourcdeMap
-  productionSourceMap: false, 
+  productionSourceMap: false,
   // 开发服务器
   devServer: {
     // npm run serve 时是否直接打开浏览器

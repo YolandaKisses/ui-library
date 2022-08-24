@@ -8,6 +8,8 @@
       :collapse-tags="selectOptions.collapseTags"
       :multiple="selectOptions.multiple"
       :clearable="selectOptions.clearable"
+      :remote="selectOptions.remote"
+      :remote-method="remoteMethod"
       @change="selectChange"
     >
       <el-option
@@ -48,6 +50,9 @@ export default {
     };
   },
   methods: {
+    remoteMethod(query) {
+      this.$emit("remoteMethod", query);
+    },
     selectChange(val) {
       this.$emit("getSelectVal", val);
     },

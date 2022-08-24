@@ -6,6 +6,7 @@
       @getSelectVal="getSelectVal"
       @handleSizeChange="handleSizeChange"
       @handleCurrentChange="handleCurrentChange"
+      @remoteMethod="remoteMethod"
     />
   </div>
 </template>
@@ -26,6 +27,7 @@ export default {
         collapseTags: false,
         currentPage: 1,
         pageSize: 2,
+        remote: true,
         selectData: [
           {
             value: "1",
@@ -52,8 +54,11 @@ export default {
     };
   },
   methods: {
+    remoteMethod(val) {
+      console.log(val, "远程搜索");
+    },
     getSelectVal(val) {
-      console.log(val);
+      console.log(val, "选中值");
     },
     handleSizeChange(val) {
       this.selectOptions.pageSize = val;

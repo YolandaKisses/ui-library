@@ -5,9 +5,7 @@ import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
-// markdown样式
-import 'prismjs/themes/prism.css'
-import 'github-markdown-css'
+import 'github-markdown-css/github-markdown.css'
 
 Vue.config.productionTip = false
 

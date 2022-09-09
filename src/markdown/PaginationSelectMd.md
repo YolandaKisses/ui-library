@@ -1,6 +1,6 @@
+```javascript
 <template>
-  <div class="PaginationSelect">
-    <h2>Pagination-Select 带分页的下拉框</h2>
+  <div>
     <PaginationSelect
       :selectOptions="selectOptions"
       @getSelectVal="getSelectVal"
@@ -8,22 +8,12 @@
       @handleCurrentChange="handleCurrentChange"
       @remoteMethod="remoteMethod"
     />
-    <div class="markdown-body" id="space">
-      <VueMarkdown :source="mdData" v-highlight></VueMarkdown>
-    </div>
   </div>
 </template>
-
 <script>
-import PaginationSelect from "../lib/Pagination-Select";
-import PaginationSelectMd from "../markdown/PaginationSelectMd.md";
-import VueMarkdown from "vue-markdown";
 export default {
-  components: { PaginationSelect, VueMarkdown },
   data() {
     return {
-      mdData: PaginationSelectMd,
-      // select组件配置项
       selectOptions: {
         filterable: true,
         clearable: true,
@@ -57,9 +47,9 @@ export default {
           }
         ]
       }
-    };
+    }
   },
-  methods: {
+   methods: {
     remoteMethod(val) {
       console.log(val, "远程搜索");
     },
@@ -73,16 +63,6 @@ export default {
       this.selectOptions.currentPage = val;
     }
   }
-};
-</script>
-
-<style lang="scss">
-.PaginationSelect {
-  h2 {
-    margin-bottom: 20px;
-  }
-  #space {
-    margin-top: 10px;
-  }
 }
-</style>
+</script>
+```

@@ -14,6 +14,7 @@
 <script>
 import PaginationSelect from "../lib/Pagination-Select";
 export default {
+  name: "PaginationSelect",
   components: { PaginationSelect },
   data() {
     return {

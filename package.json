@@ -10,14 +10,7 @@
     "dependencies": {
         "core-js": "^3.6.5",
         "element-ui": "^2.15.9",
-        "github-markdown-css": "^5.1.0",
-        "highlight.js": "^11.6.0",
-        "hyperdown": "^2.4.5",
-        "marked": "^1.2.2",
-        "prismjs": "^1.22.0",
-        "text-loader": "0.0.1",
         "vue": "^2.6.11",
-        "vue-markdown": "^2.2.4",
         "vue-router": "^3.2.0"
     },
     "devDependencies": {

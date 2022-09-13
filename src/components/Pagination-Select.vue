@@ -8,21 +8,15 @@
       @handleCurrentChange="handleCurrentChange"
       @remoteMethod="remoteMethod"
     />
-    <div class="markdown-body" id="space">
-      <VueMarkdown :source="mdData" v-highlight></VueMarkdown>
-    </div>
   </div>
 </template>
 
 <script>
 import PaginationSelect from "../lib/Pagination-Select";
-import PaginationSelectMd from "../markdown/PaginationSelectMd.md";
-import VueMarkdown from "vue-markdown";
 export default {
-  components: { PaginationSelect, VueMarkdown },
+  components: { PaginationSelect },
   data() {
     return {
-      mdData: PaginationSelectMd,
       // select组件配置项
       selectOptions: {
         filterable: true,
@@ -37,26 +31,26 @@ export default {
         selectData: [
           {
             value: "1",
-            label: "黄金糕"
+            label: "黄金糕",
           },
           {
             value: "2",
-            label: "双皮奶"
+            label: "双皮奶",
           },
           {
             value: "3",
-            label: "蚵仔煎"
+            label: "蚵仔煎",
           },
           {
             value: "4",
-            label: "龙须面"
+            label: "龙须面",
           },
           {
             value: "5",
-            label: "北京烤鸭"
-          }
-        ]
-      }
+            label: "北京烤鸭",
+          },
+        ],
+      },
     };
   },
   methods: {
@@ -71,8 +65,8 @@ export default {
     },
     handleCurrentChange(val) {
       this.selectOptions.currentPage = val;
-    }
-  }
+    },
+  },
 };
 </script>
 

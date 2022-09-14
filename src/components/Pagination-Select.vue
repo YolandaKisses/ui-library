@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import PaginationSelect from "../lib/Pagination-Select";
+import PaginationSelect from "../lib/Pagination-Select/src/index.vue";
 export default {
   name: "PaginationSelect",
   components: { PaginationSelect },

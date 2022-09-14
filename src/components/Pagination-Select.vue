@@ -76,8 +76,5 @@ export default {
   h2 {
     margin-bottom: 20px;
   }
-  #space {
-    margin-top: 10px;
-  }
 }
 </style>

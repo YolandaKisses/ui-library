@@ -60,7 +60,7 @@ export default {
       type: String,
       default: "rgba(254, 250, 207)",
     },
-    // 差异单元格自已颜色
+    // 差异单元格字体颜色
     diffCellTxtColor: {
       type: String,
       default: "red",

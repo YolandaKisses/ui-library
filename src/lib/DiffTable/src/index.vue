@@ -68,7 +68,7 @@ export default {
     // 表格高度
     tableHeight: {
       type: String,
-      default: "",
+      default: "auto",
     },
     // 是否斑马纹
     stripe: {

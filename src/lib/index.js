@@ -1,7 +1,7 @@
-import PaginationSelect from "./Pagination-Select"
+import DiffTable from "./DiffTable"
 
 // 所有组件列表
-const components = [PaginationSelect];
+const components = [DiffTable];
 
 // 定义 install 方法，接收 Vue 作为参数
 const install = function (Vue) {
@@ -19,5 +19,5 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
-  PaginationSelect,
+  DiffTable,
 };

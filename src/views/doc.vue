@@ -4,12 +4,23 @@
       <template slot="aside">
         <div class="aside-title">UI-LIBRARY-MENU</div>
         <el-scrollbar wrap-class="scrollbar-wrapper">
-          <el-menu mode="vertical" :default-active="$route.path" class="el-menu-vertical-demo" router>
-            <el-submenu v-for="item in menubar" :key="item.code" :index="item.code">
+          <el-menu
+            mode="vertical"
+            :default-active="$route.path"
+            class="el-menu-vertical-demo"
+            router
+          >
+            <el-submenu
+              v-for="item in menubar"
+              :key="item.code"
+              :index="item.code"
+            >
               <template slot="title">
                 <span>{{ item.title }}</span>
               </template>
-              <el-menu-item :index="item.path">{{ item.pathName }}</el-menu-item>
+              <el-menu-item :index="item.path">{{
+                item.pathName
+              }}</el-menu-item>
             </el-submenu>
           </el-menu>
         </el-scrollbar>
@@ -34,17 +45,17 @@ export default {
           code: "1",
           title: "公共组件",
           path: "/test",
-          pathName: "test"
+          pathName: "test",
         },
         {
           code: "2",
           title: "业务组件",
-          path: "/Pagination-Select",
-          pathName: "Pagination-Select"
-        }
-      ]
+          path: "/DiffTable",
+          pathName: "DiffTable",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -55,7 +66,7 @@ export default {
     margin-bottom: 20px;
   }
   .main {
-    padding: 20px 150px;
+    padding: 20px 100px;
   }
 }
 </style>

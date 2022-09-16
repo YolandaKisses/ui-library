@@ -16,7 +16,7 @@ const routes = [
     component: () => import('../views/doc.vue'),
     children: [
       { path: "/test", component: () => import('../components/test.vue') },
-      { path: "/Pagination-Select", component: () => import('../components/Pagination-Select.vue') },
+      { path: "/DiffTable", component: () => import('../components/DiffTable.vue') },
     ]
   }
 ]

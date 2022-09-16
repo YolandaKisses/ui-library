@@ -87,6 +87,7 @@ export default {
     },
   },
   data() {
+    // Symbol 的值是唯一的，用来解决命名冲突的问题，即使参数相同
     return {
       // 一个数组，存储有差异的cell属性名
       DIFF_CELL_KEY: Symbol("diffCells"),

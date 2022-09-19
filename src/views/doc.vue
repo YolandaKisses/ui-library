@@ -53,6 +53,12 @@ export default {
           path: "/DiffTable",
           pathName: "DiffTable",
         },
+        {
+          code: "3",
+          title: "业务组件",
+          path: "/MultipleSelectTable",
+          pathName: "MultipleSelectTable",
+        },
       ],
     };
   },

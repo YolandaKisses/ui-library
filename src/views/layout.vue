@@ -4,7 +4,7 @@
       <slot name="aside"></slot>
     </div>
     <div class="main-content" v-loading="contentLoading">
-      <slot name="content"></slot>
+      <slot name="content" ></slot>
     </div>
   </div>
 </template>

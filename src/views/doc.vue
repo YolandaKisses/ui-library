@@ -59,6 +59,12 @@ export default {
           path: "/MultipleSelectTable",
           pathName: "MultipleSelectTable",
         },
+        {
+          code: "4",
+          title: "业务组件",
+          path: "/MyChart",
+          pathName: "MyChart",
+        },
       ],
     };
   },

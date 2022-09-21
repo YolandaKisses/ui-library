@@ -19,6 +19,7 @@ const routes = [
       { path: "/DiffTable", component: () => import('../components/DiffTable.vue') },
       { path: "/MultipleSelectTable", component: () => import('../components/MultipleSelectTable.vue') },
       { path: "/MyChart", component: () => import('../components/MyChart.vue') },
+      { path: "/QueryForm", component: () => import('../components/QueryForm.vue') },
     ]
   }
 ]

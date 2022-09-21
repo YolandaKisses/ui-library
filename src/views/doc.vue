@@ -65,6 +65,12 @@ export default {
           path: "/MyChart",
           pathName: "MyChart",
         },
+        {
+          code: "5",
+          title: "业务组件",
+          path: "/QueryForm",
+          pathName: "QueryForm",
+        },
       ],
     };
   },

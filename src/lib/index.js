@@ -1,6 +1,7 @@
 import DiffTable from "./DiffTable"
 import MultipleSelectTable from "./MultipleSelectTable"
 import MyChart from "./MyChart"
+import QueryForm from "./QueryForm"
 
 // 所有组件列表
 const components = [DiffTable, MultipleSelectTable, MyChart];
@@ -23,5 +24,6 @@ export default {
   install,
   DiffTable,
   MultipleSelectTable,
-  MyChart
+  MyChart,
+  QueryForm
 };

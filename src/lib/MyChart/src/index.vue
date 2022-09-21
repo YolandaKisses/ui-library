@@ -5,6 +5,7 @@
 </template>
 <script>
 import * as echarts from "echarts";
+import _ from "lodash";
 import ResizeObserver from "resize-observer-polyfill";
 export default {
   name: "MyChart",

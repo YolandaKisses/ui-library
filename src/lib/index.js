@@ -2,13 +2,15 @@ import DiffTable from "./DiffTable"
 import MultipleSelectTable from "./MultipleSelectTable"
 import MyChart from "./MyChart"
 import QueryForm from "./QueryForm"
+import SelectTree from "./QueryForm"
 
 // 所有组件列表
 const components = [
   DiffTable,
   MultipleSelectTable,
   MyChart,
-  QueryForm
+  QueryForm,
+  SelectTree
 ];
 
 // 定义 install 方法，接收 Vue 作为参数
@@ -27,8 +29,5 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
-  DiffTable,
-  MultipleSelectTable,
-  MyChart,
-  QueryForm
+  ...components
 };

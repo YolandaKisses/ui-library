@@ -3,6 +3,7 @@ import MultipleSelectTable from "./MultipleSelectTable"
 import MyChart from "./MyChart"
 import QueryForm from "./QueryForm"
 import SelectTree from "./QueryForm"
+import MultipleSelectTree from "./MultipleSelectTree"
 
 // 所有组件列表
 const components = [
@@ -10,7 +11,8 @@ const components = [
   MultipleSelectTable,
   MyChart,
   QueryForm,
-  SelectTree
+  SelectTree,
+  MultipleSelectTree
 ];
 
 // 定义 install 方法，接收 Vue 作为参数

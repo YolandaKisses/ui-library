@@ -66,6 +66,10 @@ export default {
               path: "/SelectTree",
               pathName: "SelectTree"
             },
+            {
+              path: "/MultipleSelectTree",
+              pathName: "MultipleSelectTree"
+            },
           ],
         },
       ]

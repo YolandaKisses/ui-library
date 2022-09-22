@@ -37,6 +37,7 @@
 
 <script>
 export default {
+  name: "MultipleSelectTree",
   props: {
     // 输入框尺寸
     size: {

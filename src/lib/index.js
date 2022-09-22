@@ -2,7 +2,7 @@ import DiffTable from "./DiffTable"
 import MultipleSelectTable from "./MultipleSelectTable"
 import MyChart from "./MyChart"
 import QueryForm from "./QueryForm"
-import SelectTree from "./QueryForm"
+import SelectTree from "./SelectTree"
 import MultipleSelectTree from "./MultipleSelectTree"
 
 // 所有组件列表

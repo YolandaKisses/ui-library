@@ -34,6 +34,7 @@
 
 <script>
 export default {
+  name: "SelectTree",
   props: {
     // 输入框尺寸
     size: {

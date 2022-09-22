@@ -4,22 +4,13 @@
       <template slot="aside">
         <div class="aside-title">UI-LIBRARY-MENU</div>
         <el-scrollbar wrap-class="scrollbar-wrapper">
-          <el-menu
-            mode="vertical"
-            :default-active="$route.path"
-            class="el-menu-vertical-demo"
-            router
-          >
-            <el-submenu
-              v-for="item in menubar"
-              :key="item.code"
-              :index="item.code"
-            >
+          <el-menu mode="vertical" :default-active="$route.path" class="el-menu-vertical-demo" router>
+            <el-submenu v-for="item in menubar" :key="item.code" :index="item.code">
               <template slot="title">
                 <span>{{ item.title }}</span>
               </template>
-              <el-menu-item :index="item.path">{{
-                item.pathName
+              <el-menu-item v-for="ite in item.children" :key="ite.path" :index="ite.path">{{
+                ite.pathName
               }}</el-menu-item>
             </el-submenu>
           </el-menu>
@@ -44,36 +35,42 @@ export default {
         {
           code: "1",
           title: "公共组件",
-          path: "/test",
-          pathName: "test",
+          children:[
+            {
+              path: "/test",
+              pathName: "test"
+            }
+          ]
         },
         {
           code: "2",
           title: "业务组件",
-          path: "/DiffTable",
-          pathName: "DiffTable",
+          children:[
+            {
+              path: "/DiffTable",
+              pathName: "DiffTable"
+            },
+            {
+              path: "/MultipleSelectTable",
+              pathName: "MultipleSelectTable"
+            },
+            {
+              path: "/MyChart",
+              pathName: "MyChart"
+            },
+            {
+              path: "/QueryForm",
+              pathName: "QueryForm"
+            },
+            {
+              path: "/SelectTree",
+              pathName: "SelectTree"
+            },
+          ],
         },
-        {
-          code: "3",
-          title: "业务组件",
-          path: "/MultipleSelectTable",
-          pathName: "MultipleSelectTable",
-        },
-        {
-          code: "4",
-          title: "业务组件",
-          path: "/MyChart",
-          pathName: "MyChart",
-        },
-        {
-          code: "5",
-          title: "业务组件",
-          path: "/QueryForm",
-          pathName: "QueryForm",
-        },
-      ],
+      ]
     };
-  },
+  }
 };
 </script>
 

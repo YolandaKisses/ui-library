@@ -20,6 +20,7 @@ const routes = [
       { path: "/MultipleSelectTable", component: () => import('../components/MultipleSelectTable.vue') },
       { path: "/MyChart", component: () => import('../components/MyChart.vue') },
       { path: "/QueryForm", component: () => import('../components/QueryForm.vue') },
+      { path: "/SelectTree", component: () => import('../components/SelectTree.vue') },
     ]
   }
 ]

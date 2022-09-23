@@ -17,6 +17,7 @@ const routes = [
     children: [
       { path: "/test", component: () => import('../components/test.vue') },
       { path: "/DiffTable", component: () => import('../components/DiffTable.vue') },
+      { path: "/SelectTable", component: () => import('../components/SelectTable.vue') },
       { path: "/MultipleSelectTable", component: () => import('../components/MultipleSelectTable.vue') },
       { path: "/MyChart", component: () => import('../components/MyChart.vue') },
       { path: "/QueryForm", component: () => import('../components/QueryForm.vue') },

@@ -1,4 +1,5 @@
 import DiffTable from "./DiffTable"
+import SelectTable from "./SelectTable"
 import MultipleSelectTable from "./MultipleSelectTable"
 import MyChart from "./MyChart"
 import QueryForm from "./QueryForm"
@@ -8,6 +9,7 @@ import MultipleSelectTree from "./MultipleSelectTree"
 // 所有组件列表
 const components = [
   DiffTable,
+  SelectTable,
   MultipleSelectTable,
   MyChart,
   QueryForm,

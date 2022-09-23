@@ -51,6 +51,10 @@ export default {
               pathName: "DiffTable"
             },
             {
+              path: "/SelectTable",
+              pathName: "SelectTable"
+            },
+            {
               path: "/MultipleSelectTable",
               pathName: "MultipleSelectTable"
             },

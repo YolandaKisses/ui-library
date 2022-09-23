@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SelectTable
+    <MultipleSelectTable
       ref="multipleSelectTable"
       v-model="formQuery.vcFundCodes"
       :data="fundList"
@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import SelectTable from "../lib/MultipleSelectTable/src/index.vue";
+import MultipleSelectTable from "../lib/MultipleSelectTable/src/index.vue";
 export default {
   components: {
-    SelectTable,
+    MultipleSelectTable,
   },
   data() {
     return {

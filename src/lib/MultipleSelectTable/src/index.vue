@@ -8,6 +8,7 @@
           size="small"
           class="cursor_pointer"
           :placeholder="placeholder"
+          :disabled="disabled"
           readonly
           v-model="names"
           :title="names"
@@ -108,6 +109,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    // 是否禁用
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
     // 禁用选项
     checCheckboxkMethod: {
       type: Function,
@@ -184,6 +190,7 @@ export default {
   methods: {
     // 点击input 控制table显示隐藏
     deptogglePanel(event) {
+      if(this.disabled) return
       this.$refs.xDown3.togglePanel();
       // 表格数据勾选
       this.$nextTick(() => {

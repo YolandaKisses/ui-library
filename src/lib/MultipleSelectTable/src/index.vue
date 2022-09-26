@@ -33,14 +33,10 @@
                 checkMethod: checCheckboxkMethod,
                 checkStrictly: checkStrictly,
                 trigger: 'row',
-                highlight: true,
+                highlight: true
               }"
             >
-              <vxe-table-column
-                type="checkbox"
-                width="40"
-                align="center"
-              ></vxe-table-column>
+              <vxe-table-column type="checkbox" width="40" align="center"></vxe-table-column>
               <vxe-table-column
                 v-for="(item, index) in Columns"
                 :key="index"
@@ -83,43 +79,43 @@ export default {
       default: () => {
         return [];
       },
-      required: true,
+      required: true
     },
     // 列表表头-必填
     Columns: {
       type: Array,
-      required: true,
+      required: true
     },
     // v-model 数组保存的字段(一般需要必填)
-    idField: {
+    valueField: {
       type: String,
-      default: "id",
+      default: "id"
     },
     // 显示在文本框的字段(一般需要必填)
-    nameField: {
+    labelField: {
       type: String,
-      default: "Name",
+      default: "Name"
     },
     // 提示语(可不填)
     placeholder: {
       type: String,
-      default: "",
+      default: ""
     },
     checkStrictly: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 是否禁用
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 禁用选项
     checCheckboxkMethod: {
       type: Function,
       default: ({ row }) => {
         return row;
-      },
+      }
     },
     /* 使用示例：
     :checCheckboxkMethod="checCheckboxkMethod"
@@ -136,66 +132,46 @@ export default {
 
     width: {
       type: String,
-      default: "650px",
+      default: "650px"
     },
-    idss: {},
+    value: {}
   },
   // v-model
   model: {
-    prop: "idss",
-    event: "sendData",
+    prop: "value",
+    event: "sendData"
   },
   data() {
     return {
       names: "", //input 值
-      ids: [],
+      values: [],
       tableRoleMultipleSelection: [], //保存勾选数组
-      isShow: false,
+      isShow: false
     };
   },
   watch: {
+    value(data) {
+      this.values = data || [];
+      this.getNames();
+    },
     // 列表数据 监听, 获取input框拼接值
     data(data) {
-      let Selects = [];
-      this.ids.forEach((item) => {
-        this.data.forEach((ite) => {
-          if (ite[this.idField] == item) {
-            Selects.push(ite);
-          }
-        });
-      });
-      let Name = "";
-      for (let i = 0; i < Selects.length; i++) {
-        Name += Selects[i][this.nameField] + ",";
-      }
-      this.names = Name.slice(0, Name.length - 1);
-    },
+      this.getNames();
+    }
   },
   mounted() {
-    this.ids = JSON.parse(JSON.stringify(this.idss));
-    let Selects = [];
-    this.ids.forEach((item) => {
-      this.data.forEach((ite) => {
-        if (ite[this.idField] == item) {
-          Selects.push(ite);
-        }
-      });
-    });
-    let Name = "";
-    for (let i = 0; i < Selects.length; i++) {
-      Name += Selects[i][this.nameField] + ",";
-    }
-    this.names = Name.slice(0, Name.length - 1);
+    this.values = JSON.parse(JSON.stringify(this.value));
+    this.getNames();
   },
   methods: {
     // 点击input 控制table显示隐藏
     deptogglePanel(event) {
-      if(this.disabled) return
+      if (this.disabled) return;
       this.$refs.xDown3.togglePanel();
       // 表格数据勾选
       this.$nextTick(() => {
         this.data.forEach((row) => {
-          if (this.ids.includes(row[this.idField])) {
+          if (this.values.includes(row[this.valueField])) {
             this.$refs.xTable.setCheckboxRow(row, true);
           }
         });
@@ -215,32 +191,44 @@ export default {
     },
     // 数据处理
     sureRoleData() {
-      this.ids = [];
+      this.values = [];
       this.names = "";
 
       if (this.tableRoleMultipleSelection.length == 0) {
-        this.$emit("sendData", this.ids);
+        this.$emit("sendData", this.values);
         return;
       }
       let Selects = this.tableRoleMultipleSelection;
       let Name = "";
       for (let i = 0; i < Selects.length; i++) {
-        // 获取数组数据 -- 根据 this.idField 的值来决定
-        this.ids.push(Selects[i][this.idField]);
-        Name += Selects[i][this.nameField] + ",";
+        // 获取数组数据 -- 根据 this.valueField 的值来决定
+        this.values.push(Selects[i][this.valueField]);
+        Name += Selects[i][this.labelField] + ",";
       }
       // input框赋值
       this.names = Name.slice(0, Name.length - 1);
       // 抛出v-model 数组数据
-      this.$emit("sendData", this.ids);
+      this.$emit("sendData", this.values);
+    },
+    getNames() {
+      let Selects = [];
+      this.values.forEach((item) => {
+        this.data.forEach((ite) => {
+          if (ite[this.valueField] == item) {
+            Selects.push(ite);
+          }
+        });
+      });
+      let Name = "";
+      for (let i = 0; i < Selects.length; i++) {
+        Name += Selects[i][this.labelField] + ",";
+      }
+      this.names = Name.slice(0, Name.length - 1);
     },
     // 筛选
     customStringFilterMethod({ option, row, column }) {
       if (option.data) {
-        return (
-          row[column.property] &&
-          row[column.property].toLowerCase().indexOf(option.data) > -1
-        );
+        return row[column.property] && row[column.property].toLowerCase().indexOf(option.data) > -1;
       }
       return true;
     },
@@ -252,8 +240,8 @@ export default {
       option.checked = true;
       // // 修改条件之后，需要手动调用 updateData 处理表格数据
       xTable.updateData();
-    },
-  },
+    }
+  }
 };
 </script>
 

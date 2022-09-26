@@ -118,6 +118,10 @@ export default {
     };
   },
   watch: {
+    value(data){
+      this.values = data;
+      this.getNames();
+    },
     // 列表数据 监听, 获取input框拼接值
     data(data) {
       // 获取names
@@ -125,6 +129,7 @@ export default {
     }
   },
   mounted() {
+    this.values = JSON.parse(JSON.stringify(this.value));
     // 获取names
     this.getNames();
   },
@@ -148,17 +153,17 @@ export default {
       const tableData = this.data;
       if (tableData.length) {
         let obj = tableData.find((item) => {
-          return item[this.valueField] == this.value;
+          return item[this.valueField] == this.values;
         });
         if (obj) {
           // 默认选中
           this.$refs.xTable.setCurrentRow(obj);
-          this.names = obj[this.labelField] || JSON.parse(JSON.stringify(this.value));
+          this.names = obj[this.labelField] || JSON.parse(JSON.stringify(this.values));
         } else {
-          this.names = JSON.parse(JSON.stringify(this.value));
+          this.names = JSON.parse(JSON.stringify(this.values));
         }
       }else{
-        // this.names = JSON.parse(JSON.stringify(this.value));
+        // this.names = JSON.parse(JSON.stringify(this.values));
       }
     },
     // 筛选

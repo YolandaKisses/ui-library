@@ -5,8 +5,8 @@
       v-model="formQuery.vcFundCodes"
       :data="fundList"
       :Columns="Columns"
-      id-field="vcFundCode"
-      name-field="vcFundName"
+      value-field="vcFundCode"
+      label-field="vcFundName"
       placeholder="请选择"
     />
   </div>

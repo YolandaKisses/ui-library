@@ -103,6 +103,7 @@ export default {
     };
   },
   created() {
+    this.values = JSON.parse(JSON.stringify(this.value));
     this.getOption(); // 获取 option，对 names 赋值
   },
   watch: {
@@ -110,7 +111,8 @@ export default {
       this.getOption(); // 获取 option，对 names 赋值
     },
     value(data) {
-      // console.log(data);
+      this.values = data;
+      this.getOption();
     }
   },
   methods: {
@@ -172,7 +174,7 @@ export default {
       this.option = [];
       this.abc(this.treeData);
       let nameArr = [];
-      this.value.forEach((item) => {
+      this.values.forEach((item) => {
         this.option.forEach((i) => {
           if (item == i.value) {
             nameArr.push(i.label);

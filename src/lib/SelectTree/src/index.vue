@@ -19,13 +19,12 @@
         ref="tree"
         :data="treeData"
         :node-key="nodeKey"
-        :highlight-current="(value || value === 0) ? true : false"
+        :highlight-current="value || value === 0 ? true : false"
         default-expand-all
         :expand-on-click-node="false"
         :props="defaultProps"
         :filter-node-method="filterNode"
         @node-click="nodeClick"
-        :current-node-key="value"
       >
       </el-tree>
     </el-select>
@@ -97,6 +96,7 @@ export default {
     };
   },
   created() {
+    this.values = JSON.parse(JSON.stringify(this.value));
     this.getOption(); // 获取 option，对 names 赋值
   },
   watch: {
@@ -104,7 +104,8 @@ export default {
       this.getOption(); // 获取 option，对 names 赋值
     },
     value(data) {
-      // console.log(data);
+      this.values = data;
+      this.getOption();
     }
   },
   methods: {
@@ -149,13 +150,18 @@ export default {
       this.option = [];
       this.abc(this.treeData);
       let obj = this.option.find((item) => {
-        return item.value == this.value;
+        return item.value == this.values;
       });
       if (obj) {
-        this.names = obj[this.defaultProps.label] || this.value + "";
+        this.names = obj[this.defaultProps.label] || this.values + "";
       } else {
-        this.names = this.value + "";
+        this.names = this.values + "";
       }
+      this.$nextTick(() => {
+        if (this.treeData.length && this.$refs.tree) {
+          this.$refs.tree.setCurrentKey(this.values);
+        }
+      });
     },
     // 数据处理
     abc(data) {

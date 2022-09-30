@@ -23,12 +23,12 @@
         show-checkbox
         highlight-current
         default-expand-all
-        :expand-on-click-node="false"
         :props="defaultProps"
         :filter-node-method="filterNode"
         :check-strictly="checkStrictly_"
+        :expand-on-click-node="false"
+        :check-on-click-node="true"
         @check="check"
-        @node-click="nodeClick"
       >
       </el-tree>
     </el-select>
@@ -116,12 +116,6 @@ export default {
     }
   },
   methods: {
-    // 点击章节节点勾选/取消勾选
-    nodeClick(data, node, el) {
-      const treeitem = el.$el;
-      const checkbox_input = treeitem.childNodes[0].childNodes[1].childNodes[0];
-      checkbox_input && checkbox_input.click();
-    },
     // 当复选框被点击的时候触发
     check(data, node) {
       let checkedKeys = node.checkedKeys;

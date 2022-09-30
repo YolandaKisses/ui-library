@@ -4,7 +4,12 @@ import {
   convertToDictLabel,
   convertToGroup,
 } from "./convertData.js";
-
+import {
+  deleteNodeById,
+  selectNodeById,
+  appendNodeById,
+  updateNodeById,
+} from "./recursionData.js";
 function PromiseObj(item) {
   return new Promise((resolve, reject) => {
     let obj = {};
@@ -54,4 +59,8 @@ export default {
   convertToGroup,
   getSqlDataBySqlCode,
   myPromiseAll,
+  deleteNodeById,
+  selectNodeById,
+  appendNodeById,
+  updateNodeById,
 };

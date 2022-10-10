@@ -4,7 +4,6 @@
 
 ```javascript
 npm库地址：https://www.npmjs.com/package/dd-ui-library
-npm账号：miralceee, 密码：yolanda0807, 邮箱：jelare_svken@qq.com
 组件库：https://github.com/YolandaKisses/ui-library
 ```
 
@@ -26,7 +25,7 @@ npm账号：miralceee, 密码：yolanda0807, 邮箱：jelare_svken@qq.com
 ```javascript
 src/lib 下存放组件源码，目录结构需统一为
 ├─ xxx组件
-│  └─ src 
+│  └─ src
 │	└─ index.vue // 组件源码
 │  └─ index.js // 调用install方法注册
 ```
@@ -86,7 +85,7 @@ module.exports = {
 }
 ```
 
-#### 发布到npm
+#### 发布到 npm
 
 ```javascript
 cd ./dd-ui-library
@@ -95,8 +94,7 @@ npm init -y 初始化package.json
 
 设置npm源：npm config set registry=https://registry.npmjs.org
 
-添加npm账号：npm login  
-目前已发布至：npm账号miralceee, 密码yolanda0807, 邮箱jelare_svken@qq.com 链接如最上方
+添加npm账号：npm login
 
 发布：npm publish (不能重复发布同一个版本号，需修改package.json中version
 ```

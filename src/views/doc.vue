@@ -1,10 +1,19 @@
 <template>
   <div id="doc">
-    <main-layout>
+    <main-layout :menuType="menuType">
       <template slot="aside">
-        <div class="aside-title">UI-LIBRARY-MENU</div>
+        <div class="aside-title">
+          <i class="el-icon-menu" @click="handleMenu"></i>
+        </div>
         <el-scrollbar wrap-class="scrollbar-wrapper">
-          <el-menu mode="vertical" :default-active="$route.path" class="el-menu-vertical-demo" router>
+          <el-menu
+            :mode="menuType ? 'horizontal' : 'vertical'"
+            :default-active="$route.path"
+            router
+            class="el-menu-demo"
+          >
+            <!-- mode="horizontal" -->
+            <!-- mode="vertical" -->
             <el-submenu v-for="item in menubar" :key="item.code" :index="item.code">
               <template slot="title">
                 <span>{{ item.title }}</span>
@@ -15,6 +24,9 @@
             </el-submenu>
           </el-menu>
         </el-scrollbar>
+      </template>
+      <template slot="header">
+        <div class="header">头部区域</div>
       </template>
       <template slot="content">
         <div class="main">
@@ -27,15 +39,17 @@
 
 <script>
 import mainLayout from "./layout.vue";
+import { menuType } from "../setting";
 export default {
   components: { mainLayout },
   data() {
     return {
+      menuType,
       menubar: [
         {
           code: "1",
           title: "公共组件",
-          children:[
+          children: [
             {
               path: "/test",
               pathName: "test"
@@ -45,7 +59,7 @@ export default {
         {
           code: "2",
           title: "业务组件",
-          children:[
+          children: [
             {
               path: "/DiffTable",
               pathName: "DiffTable"
@@ -73,23 +87,117 @@ export default {
             {
               path: "/MultipleSelectTree",
               pathName: "MultipleSelectTree"
-            },
-          ],
+            }
+          ]
         },
+        {
+          code: "3",
+          title: "公共组件",
+          children: [
+            {
+              path: "/a",
+              pathName: "a"
+            }
+          ]
+        },
+        {
+          code: "4",
+          title: "公共组件",
+          children: [
+            {
+              path: "/b",
+              pathName: "b"
+            }
+          ]
+        },
+        {
+          code: "5",
+          title: "公共组件",
+          children: [
+            {
+              path: "/c",
+              pathName: "c"
+            }
+          ]
+        },
+        {
+          code: "6",
+          title: "公共组件",
+          children: [
+            {
+              path: "/d",
+              pathName: "d"
+            }
+          ]
+        },
+        {
+          code: "7",
+          title: "公共组件",
+          children: [
+            {
+              path: "/e",
+              pathName: "e"
+            }
+          ]
+        },
+        {
+          code: "8",
+          title: "公共组件",
+          children: [
+            {
+              path: "/f",
+              pathName: "f"
+            }
+          ]
+        },
+        {
+          code: "9",
+          title: "公共组件",
+          children: [
+            {
+              path: "/g",
+              pathName: "g"
+            }
+          ]
+        },
+        {
+          code: "10",
+          title: "公共组件",
+          children: [
+            {
+              path: "/h",
+              pathName: "h"
+            }
+          ]
+        }
       ]
     };
+  },
+  methods: {
+    handleMenu() {
+      this.menuType = !this.menuType;
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 #doc {
+  position: relative;
   .aside-title {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 9999;
     text-align: center;
-    margin-bottom: 20px;
+    i {
+      font-size: 20px;
+      cursor: pointer;
+    }
   }
   .main {
     padding: 20px 100px;
   }
 }
 </style>
+ 

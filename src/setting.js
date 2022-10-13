@@ -1,3 +1,3 @@
 module.exports = {
-  menuType: false // true: horizontal / false: vertical
+  menuType: true // true: horizontal / false: vertical
 }

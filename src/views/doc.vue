@@ -5,13 +5,20 @@
         <div class="aside-title">
           <i class="el-icon-menu" @click="handleMenu"></i>
         </div>
-        <el-scrollbar wrap-class="scrollbar-wrapper">
-          <el-menu
-            :mode="menuType ? 'horizontal' : 'vertical'"
-            :default-active="$route.path"
-            router
-            class="el-menu-demo"
-          >
+        <el-menu mode="horizontal" :default-active="$route.path" router class="el-menu-demo" v-if="menuType">
+          <!-- mode="horizontal" -->
+          <!-- mode="vertical" -->
+          <el-submenu v-for="item in menubar" :key="item.code" :index="item.code">
+            <template slot="title">
+              <span>{{ item.title }}</span>
+            </template>
+            <el-menu-item v-for="ite in item.children" :key="ite.path" :index="ite.path">{{
+              ite.pathName
+            }}</el-menu-item>
+          </el-submenu>
+        </el-menu>
+        <el-scrollbar wrap-class="scrollbar-wrapper" v-else>
+          <el-menu mode="vertical" :default-active="$route.path" router class="el-menu-vertical-demo">
             <!-- mode="horizontal" -->
             <!-- mode="vertical" -->
             <el-submenu v-for="item in menubar" :key="item.code" :index="item.code">

@@ -33,58 +33,58 @@ export default {
     // 对比唯一key
     uniqueKey: {
       type: String,
-      default: "id",
+      default: "id"
     },
     // 需对比表格数据源
     dataGroup: {
       type: Array,
-      validator: (val) => val.length === 2,
+      validator: (val) => val.length === 2
     },
     // 需对比表格的列
     columns: {
       type: Array,
-      required: true,
+      required: true
     },
     // 新增行背景色
     addRowColor: {
       type: String,
-      default: "#E1F3D8",
+      default: "#E1F3D8"
     },
     // 新增行字体颜色
     addRowTxtColor: {
       type: String,
-      default: "red",
+      default: "red"
     },
     // 差异单元格背景色
     diffCellColor: {
       type: String,
-      default: "rgba(254, 250, 207)",
+      default: "rgba(254, 250, 207)"
     },
     // 差异单元格字体颜色
     diffCellTxtColor: {
       type: String,
-      default: "red",
+      default: "red"
     },
     // 表格高度
     tableHeight: {
       type: String,
-      default: "auto",
+      default: "auto"
     },
     // 是否斑马纹
     stripe: {
       type: Boolean,
-      default: true,
+      default: true
     },
     // 是否需要边框
     border: {
       type: Boolean,
-      default: true,
+      default: true
     },
     // 自定义表头
     headerCellStyle: {
       type: Object,
-      default: () => {},
-    },
+      default: () => {}
+    }
   },
   data() {
     // Symbol 的值是唯一的，用来解决命名冲突的问题，即使参数相同
@@ -92,7 +92,7 @@ export default {
       // 一个数组，存储有差异的cell属性名
       DIFF_CELL_KEY: Symbol("diffCells"),
       // 标记已完成处理
-      COMPLETED_KEY: Symbol("completed"),
+      COMPLETED_KEY: Symbol("completed")
     };
   },
   computed: {
@@ -104,13 +104,7 @@ export default {
      * @param { Symbol } DIFF_CELL_KEY 存储有差异的cell属性名
      * @param { Symbol } COMPLETED_KEY 标记已完成处理
      */
-    completedData({
-      dataGroup,
-      uniqueKey,
-      columns,
-      DIFF_CELL_KEY,
-      COMPLETED_KEY,
-    }) {
+    completedData({ dataGroup, uniqueKey, columns, DIFF_CELL_KEY, COMPLETED_KEY }) {
       const cacheMap = new Map();
       // 先遍历一次第一组数据，初始化DIFF_CELL_KEY数组，然后存进map中
       for (const _row of dataGroup[0]) {
@@ -138,7 +132,7 @@ export default {
       // 将map存一份到this中，因为会在处理样式的时候用到
       this.$_cacheMap = cacheMap;
       return dataGroup;
-    },
+    }
   },
   methods: {
     /**
@@ -148,7 +142,7 @@ export default {
       return (
         !row[this.COMPLETED_KEY] && {
           backgroundColor: this.addRowColor,
-          color: this.addRowTxtColor,
+          color: this.addRowTxtColor
         }
       );
     },
@@ -163,20 +157,14 @@ export default {
         _cacheRow &&
         _cacheRow[DIFF_CELL_KEY].includes(column.property) && {
           backgroundColor: this.diffCellColor,
-          color: this.diffCellTxtColor,
+          color: this.diffCellTxtColor
         }
       );
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.diff-table-container {
-  display: flex;
-  align-items: flex-start;
-  .el-table + .el-table {
-    margin-left: 20px;
-  }
-}
+@import "@/theme-chalk/DiffTable.scss";
 </style>

@@ -166,5 +166,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/theme-chalk/DiffTable.scss";
+.diff-table-container {
+  display: flex;
+  align-items: flex-start;
+  .el-table + .el-table {
+    margin-left: 20px;
+  }
+}
 </style>

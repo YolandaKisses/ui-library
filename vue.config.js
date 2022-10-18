@@ -21,16 +21,6 @@ module.exports = {
           from: path.resolve(__dirname, 'src/utils'),
           to: path.resolve(__dirname, 'dd-ui-library/lib/utils'),
           ignore: ".*"
-        },
-        {
-          from: path.resolve(__dirname, 'src/theme-chalk'),
-          to: path.resolve(__dirname, 'dd-ui-library/lib/theme-chalk'),
-          ignore: ".*"
-        },
-        {
-          from: path.resolve(__dirname, 'src/lib'),
-          to: path.resolve(__dirname, 'dd-ui-library/packages'),
-          ignore: ".*"
         }
       ])
     ]

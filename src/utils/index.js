@@ -1,15 +1,7 @@
-import { getSqlDataBySqlCode } from "./api.js";
-import {
-  converTreeData,
-  convertToDictLabel,
-  convertToGroup,
-} from "./convertData.js";
-import {
-  deleteNodeById,
-  selectNodeById,
-  appendNodeById,
-  updateNodeById,
-} from "./recursionData.js";
+import Api from "./Api.js";
+import ConvertData from "./ConvertData.js";
+import RecursionData from "./RecursionData.js";
+import RegExp from "./RegExp.js";
 function PromiseObj(item) {
   return new Promise((resolve, reject) => {
     let obj = {};
@@ -54,13 +46,9 @@ export function myPromiseAll(array) {
 }
 
 export default {
-  converTreeData,
-  convertToDictLabel,
-  convertToGroup,
-  getSqlDataBySqlCode,
   myPromiseAll,
-  deleteNodeById,
-  selectNodeById,
-  appendNodeById,
-  updateNodeById,
+  ...Api,
+  ...ConvertData,
+  ...RecursionData,
+  ...RegExp
 };

@@ -4,7 +4,7 @@
 
 /**
  * 转换为百分位
- * @param {*} value 待验证的数值
+ * @param { String } value 待验证的数值
  * @returns 验证结果
  */
 export function ConvertPercentile(value) {
@@ -14,7 +14,7 @@ export function ConvertPercentile(value) {
 
 /**
  * 转换为千分位
- * @param {*} value 待验证的数值
+ * @param { String } value 待验证的数值
  * @returns 验证结果
  */
 export function ConvertThousands(value) {
@@ -24,7 +24,7 @@ export function ConvertThousands(value) {
 
 /**
  * 转换为万分位
- * @param {*} value 待验证的数值
+ * @param { String } value 待验证的数值
  * @returns 验证结果
  */
 export function ConvertWan(value) {
@@ -33,18 +33,8 @@ export function ConvertWan(value) {
 }
 
 /**
- * 是否是非负整数
- * @param {*} value 待验证的数值
- * @returns 验证结果
- */
-export function isPositiveInteger(value) {
-  const reg = /^\d+$/;
-  return reg.test(value);
-}
-
-/**
  * 是否是正数，可以是整数，也可以是浮点数
- * @param {*} value 待验证的数值
+ * @param { String | Number } value 待验证的数值
  * @returns 验证结果
  */
 export function isPositiveNumber(value) {
@@ -54,7 +44,7 @@ export function isPositiveNumber(value) {
 
 /**
  * 验证电子邮箱格式是否正确
- * @param {*} value 待验证的电子邮箱
+ * @param { String } value 待验证的电子邮箱
  * @returns 验证结果
  */
 export function validEmail(value) {
@@ -64,7 +54,7 @@ export function validEmail(value) {
 
 /**
  * 验证手机号格式是否正确
- * @param {*} value 待验证的手机号
+ * @param { String | Number } value 待验证的手机号
  * @returns 验证结果
  */
 export function phone(value) {
@@ -74,7 +64,7 @@ export function phone(value) {
 
 /**
  * 判断是否为空
- * @param {*} value 待验证内容
+ * @param {*} val 待验证内容
  * @returns 验证结果
  */
 export function isNull(val) {
@@ -106,7 +96,6 @@ export default {
   ConvertPercentile,
   ConvertThousands,
   ConvertWan,
-  isPositiveInteger,
   isPositiveNumber,
   validEmail,
   phone,

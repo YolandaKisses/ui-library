@@ -6,7 +6,7 @@
  */
 
 /**
- * 线性结构转树形结构
+ * @desc 线性结构转树形结构
  * @param {*} nodes 节点
  * @param {*} treeRootId 顶级根节点
  * @param {*} pidName 父节点名
@@ -78,7 +78,7 @@ export const converTreeData = (nodes, treeRootId, pidName, idName, mid) => {
 };
 
 /**
- * 根据指定值从字典数据中转换label
+ * @desc 根据指定值从字典数据中转换label
  * @param {*} datas 字典数据
  * @param {*} value 编码
  * @returns
@@ -95,7 +95,7 @@ export function convertToDictLabel(datas, value) {
 }
 
 /**
- * 根据pkey进行分组归类 => 只支持二级归类
+ * @desc 根据pkey进行分组归类 => 只支持二级归类
  * @param {*} list 数据列表
  * @param {*} options 参数如下
  * @param {*} pkey 父级的key

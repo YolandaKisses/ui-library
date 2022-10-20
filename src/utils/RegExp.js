@@ -3,7 +3,7 @@
  */
 
 /**
- * 转换为百分位
+ * @desc 转换为百分位
  * @param { String } value 待验证的数值
  * @returns 验证结果
  */
@@ -13,7 +13,7 @@ export function ConvertPercentile(value) {
 }
 
 /**
- * 转换为千分位
+ * @desc 转换为千分位
  * @param { String } value 待验证的数值
  * @returns 验证结果
  */
@@ -23,7 +23,7 @@ export function ConvertThousands(value) {
 }
 
 /**
- * 转换为万分位
+ * @desc 转换为万分位
  * @param { String } value 待验证的数值
  * @returns 验证结果
  */
@@ -33,7 +33,7 @@ export function ConvertWan(value) {
 }
 
 /**
- * 是否是正数，可以是整数，也可以是浮点数
+ * @desc 是否是正数，可以是整数，也可以是浮点数
  * @param { String | Number } value 待验证的数值
  * @returns 验证结果
  */
@@ -43,7 +43,7 @@ export function isPositiveNumber(value) {
 }
 
 /**
- * 验证电子邮箱格式是否正确
+ * @desc 验证电子邮箱格式是否正确
  * @param { String } value 待验证的电子邮箱
  * @returns 验证结果
  */
@@ -53,7 +53,7 @@ export function validEmail(value) {
 }
 
 /**
- * 验证手机号格式是否正确
+ * @desc 验证手机号格式是否正确
  * @param { String | Number } value 待验证的手机号
  * @returns 验证结果
  */
@@ -63,7 +63,7 @@ export function phone(value) {
 }
 
 /**
- * 判断是否为空
+ * @desc 判断是否为空
  * @param {*} val 待验证内容
  * @returns 验证结果
  */
@@ -93,7 +93,7 @@ export function isNull(val) {
 }
 
 /**
- * 身份证号正则
+ * @desc 身份证号正则
  * @param { String | Number } value 待验证的身份证
  * @returns 验证结果
  */

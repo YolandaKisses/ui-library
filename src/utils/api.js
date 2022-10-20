@@ -1,5 +1,5 @@
 /**
- * 通用sqlCode接口
+ * @desc 通用sqlCode接口
  * @param { Object } request 请求实例
  * @param { Object } data 查询条件
  */

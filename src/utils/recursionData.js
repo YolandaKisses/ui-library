@@ -1,10 +1,10 @@
 
 /**
- * 根据id递归数据增删改查操作
+ * 根据id递归树形结构数据增删改查操作
  */
 
 /**
- * 根据目标id删除指定节点
+ * @desc 根据目标id删除指定节点
  * @param {*} list 数据源
  * @param {*} targetId 目标id
  */
@@ -23,7 +23,7 @@ export function deleteNodeById(list, targetId) {
 }
 
 /**
- * 根据目标id查找指定节点
+ * @desc 根据目标id查找指定节点
  * @param {*} list 数据源
  * @param {*} targetId 目标id
  */
@@ -46,7 +46,7 @@ export function selectNodeById(list, targetId) {
 }
 
 /**
- * 添加节点到目标id下
+ * @desc 添加节点到目标id下
  * @param {*} list 数据源
  * @param {*} targetId 目标id
  * @param {*} obj 目标对象
@@ -65,7 +65,7 @@ export function appendNodeById(list, targetId, obj) {
 }
 
 /**
- * 修改目标id数据
+ * @desc 修改目标id数据
  * @param {*} list 数据源
  * @param {*} targetId 目标id
  * @param {*} obj 目标对象

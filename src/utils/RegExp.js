@@ -92,6 +92,16 @@ export function isNull(val) {
   return false;
 }
 
+/**
+ * 身份证号正则
+ * @param { String | Number } value 待验证的身份证
+ * @returns 验证结果
+ */
+export function validIdentity(value) {
+  const reg = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
+  return reg.test(value);
+}
+
 export default {
   ConvertPercentile,
   ConvertThousands,
@@ -99,5 +109,6 @@ export default {
   isPositiveNumber,
   validEmail,
   phone,
-  isNull
+  isNull,
+  validIdentity
 }

@@ -151,7 +151,7 @@ export function timeStamp2String(time, type) {
 export default {
   myPromiseAll,
   arrObjSort,
-  ...timeStamp2String,
+  timeStamp2String,
   ...Api,
   ...ConvertData,
   ...RecursionData,

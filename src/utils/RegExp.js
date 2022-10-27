@@ -113,16 +113,6 @@ export function validDate(value) {
 }
 
 /**
- * @desc 验证中文字符
- * @param { String | Number } value 待验证的中文字符
- * @returns 验证结果
- */
-export function validChinese(value) {
-  const reg = [\u4e00-\u9fa5]
-  return reg.test(value);
-}
-
-/**
  * @desc 验证密码格式
  * @param { String | Number } value 待验证的密码格式
  * @returns 验证结果

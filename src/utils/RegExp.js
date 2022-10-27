@@ -122,6 +122,16 @@ export function validPwd(value) {
   return reg.test(value);
 }
 
+/**
+ * @desc 验证强密码格式
+ * @param { String | Number } value 待验证的强密码格式
+ * @returns 验证结果
+ */
+export function validStrongPwd(value) {
+  const reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$/
+  return reg.test(value);
+}
+
 
 export default {
   ConvertPercentile,
@@ -133,5 +143,6 @@ export default {
   isNull,
   validIdentity,
   validDate,
-  validPwd
+  validPwd,
+  validStrongPwd
 }

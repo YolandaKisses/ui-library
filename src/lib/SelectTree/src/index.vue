@@ -130,7 +130,7 @@ export default {
     // 节点过滤
     filterNode(value, data) {
       if (!value) return true;
-      return data.label.indexOf(value) !== -1;
+      return data[this.defaultProps.label].indexOf(value) !== -1;
     },
     // 下拉框显示/隐藏时触发
     visibleChange(flag) {
@@ -153,7 +153,7 @@ export default {
         return item.value == this.values;
       });
       if (obj) {
-        this.names = obj[this.defaultProps.label] || this.values + "";
+        this.names = obj.label || this.values + "";
       } else {
         this.names = this.values + "";
       }
@@ -186,9 +186,12 @@ export default {
   .el-select-dropdown__item {
     display: none !important;
   }
-  .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+  .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content .el-tree-node__label {
     color: #409eff;
     font-weight: 600;
+  }
+  .el-tree-node__expand-icon.is-leaf {
+    display: block !important;
   }
 }
 </style>

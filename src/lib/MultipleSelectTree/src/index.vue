@@ -118,12 +118,13 @@ export default {
   methods: {
     // 当复选框被点击的时候触发
     check(data, node) {
+      const defaultProps = this.defaultProps;
       let checkedKeys = node.checkedKeys;
       let checkedNodes = node.checkedNodes;
       let halfCheckedKeys = node.halfCheckedKeys;
       let halfCheckedNodes = node.halfCheckedNodes;
-      let namesArr = checkedNodes.map((item) => item.label) || [];
-      let Pidarr = halfCheckedNodes.map((item) => item.label) || [];
+      let namesArr = checkedNodes.map((item) => item[defaultProps.label]) || [];
+      let Pidarr = halfCheckedNodes.map((item) => item[defaultProps.label]) || [];
       this.names = [...Pidarr, ...namesArr].join(",");
       this.values = [...halfCheckedKeys, ...checkedKeys];
       this.$emit("sendData", this.values);
@@ -134,8 +135,9 @@ export default {
       this.$refs.tree.filter(val);
     },
     filterNode(value, data) {
+      const defaultProps = this.defaultProps;
       if (!value) return true;
-      return data.label.indexOf(value) !== -1;
+      return data[defaultProps.label].indexOf(value) !== -1;
     },
     // 下拉框显示/隐藏时触发
     visibleChange(flag) {
